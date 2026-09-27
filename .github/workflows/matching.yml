@@ -1,0 +1,24 @@
+name: matching
+on: [pull_request]
+
+jobs:
+  check:
+    # Needs the original asset available locally, and it can't be
+    # committed to the repo, so this expects a self-hosted runner with
+    # the asset pre-staged under local/. Public GitHub-hosted runners
+    # will just skip.
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: run matching checks
+        run: |
+          if [ ! -f local/target.wasm ]; then
+            echo "no local asset staged, skipping"
+            exit 0
+          fi
+          python wasm/tools/split_functions.py local/target.wasm
+          python tools/common/progress.py

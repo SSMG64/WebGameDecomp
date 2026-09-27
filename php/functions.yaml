@@ -1,0 +1,12 @@
+functions: []
+# populated by php/tools/split_functions.py, one entry per function
+# (plus a __main__ entry for top-level file code), e.g.:
+#
+# functions:
+#   - name: calculateDamage
+#     line_count: 14
+#     sha256: 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+#     dump_file: calculateDamage.opcodes
+#     status: not_started      # not_started | wip | close | matching
+#     source: php/src/calculate_damage.php
+#     match_ratio: 0.0

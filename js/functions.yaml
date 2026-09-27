@@ -1,0 +1,10 @@
+functions: []
+# populated by js/tools/split_functions.js, one entry per top-level function, e.g.:
+#
+# functions:
+#   - name: calculateDamage
+#     original_chars: 480
+#     sha256: 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+#     status: not_started      # not_started | wip | close | matching
+#     source: js/src/calculateDamage.js
+#     match_ratio: 0.0

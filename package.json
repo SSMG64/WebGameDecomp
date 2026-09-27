@@ -1,0 +1,20 @@
+{
+  "name": "webgamedecomp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deobfuscate": "node js/tools/deobfuscate.js",
+    "split": "node js/tools/split_functions.js",
+    "match": "node js/tools/match.js",
+    "recover-sourcemap": "node js/tools/recover_sourcemap.js"
+  },
+  "devDependencies": {
+    "acorn": "^8.11.0",
+    "diff": "^5.2.0",
+    "js-yaml": "^4.1.0",
+    "svelte": "^5.0.0",
+    "terser": "^5.31.0",
+    "typescript": "^5.5.0",
+    "webcrack": "^2.14.0"
+  }
+}

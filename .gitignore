@@ -1,0 +1,11 @@
+local/
+wasm/dump/
+js/dump/
+build/
+*.wasm
+!examples/demo/demo.c
+node_modules/
+__pycache__/
+*.pyc
+progress.svg
+progress.json

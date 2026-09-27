@@ -1,0 +1,26 @@
+* text=auto eol=lf
+
+*.c text
+*.h text
+*.rs text
+*.php text
+*.ts text
+*.svelte text
+*.js text
+*.mjs text
+*.py text
+*.sh text eol=lf
+*.yaml text
+*.yml text
+*.md text
+*.json text
+
+*.wasm binary
+*.png binary
+*.svg -diff
+*.bytes -diff
+*.opcodes -diff
+
+package-lock.json linguist-generated=true
+progress.svg linguist-generated=true
+progress.json linguist-generated=true

@@ -1,0 +1,26 @@
+# One of these per game/version you're working on.
+name: example-game
+version: "1.0.0"
+source_url: "https://example.com/game/"   # where you legally obtained it, for your own notes
+
+wasm:
+  entry_file: null          # path to the game's .wasm, kept under local/, never committed
+  toolchain: "emcc"          # emcc, clang, or rustc (see docs/WASM_GUIDE.md)
+  compile_cmd: "emcc {src} -O2 -s WASM=1 --no-entry -o {out}"
+
+js:
+  entry_file: null          # path to the obfuscated bundle, kept under local/
+  bundler: "terser"          # terser, esbuild, or webpack; must match how the original was built
+  minify_cmd: null           # override if the default terser call in match.js doesn't reproduce the original
+  languages: [js, ts, svelte]  # candidate files can be .js, .ts, or .svelte; match.js detects the extension
+
+php:
+  entry_file: null          # path to the source (or decoded source) file, kept under local/
+  php_version: "8.3"          # must match the target closely; opcode formats vary between major versions
+  vld_ext: "vld.so"          # path or name of the built vld extension, see docs/PHP_GUIDE.md
+
+notes: |
+  Record anything you learn about the original toolchain here:
+  compiler name/version from `wasm/tools/split_functions.py --identify`,
+  bundler fingerprints, obfuscator name, PHP version, etc. This is the
+  single most useful thing you can do for getting a match.
